@@ -163,6 +163,7 @@ export class BaseRouterV2 extends Contract {
       askJettonAddress: AddressType;
       offerAmount: AmountType;
       minAskAmount: AmountType;
+      receiverAddress?: AddressType;
       refundAddress?: AddressType;
       excessesAddress?: AddressType;
       referralAddress?: AddressType;
@@ -195,7 +196,7 @@ export class BaseRouterV2 extends Contract {
 
     const forwardPayload = await this.createSwapBody({
       askJettonWalletAddress: askJettonWalletAddress,
-      receiverAddress: params.userWalletAddress,
+      receiverAddress: params.receiverAddress ?? params.userWalletAddress,
       minAskAmount: params.minAskAmount,
       refundAddress: params.refundAddress ?? params.userWalletAddress,
       excessesAddress: params.excessesAddress,
@@ -287,6 +288,7 @@ export class BaseRouterV2 extends Contract {
       askJettonAddress: AddressType;
       offerAmount: AmountType;
       minAskAmount: AmountType;
+      receiverAddress?: AddressType;
       refundAddress?: AddressType;
       excessesAddress?: AddressType;
       referralAddress?: AddressType;
@@ -307,7 +309,7 @@ export class BaseRouterV2 extends Contract {
 
     const forwardPayload = await this.createSwapBody({
       askJettonWalletAddress: askJettonWalletAddress,
-      receiverAddress: params.userWalletAddress,
+      receiverAddress: params.receiverAddress ?? params.userWalletAddress,
       minAskAmount: params.minAskAmount,
       refundAddress: params.refundAddress ?? params.userWalletAddress,
       excessesAddress: params.excessesAddress,
