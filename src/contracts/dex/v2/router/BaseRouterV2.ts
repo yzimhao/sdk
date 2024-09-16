@@ -246,6 +246,7 @@ export class BaseRouterV2 extends Contract {
       proxyTon: Pton;
       offerAmount: AmountType;
       minAskAmount: AmountType;
+      receiverAddress?: AddressType;
       refundAddress?: AddressType;
       excessesAddress?: AddressType;
       referralAddress?: AddressType;
